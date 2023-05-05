@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".PersonalInfo">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/accountDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/montserrat_light"
+            android:text="Enter details to complete registration"
+            android:textColor="@color/material_dynamic_neutral60"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/unversityEmail3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/baseline_drive_file_rename_outline_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/app_theme"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Full Name"
+            android:inputType="text"
+            android:padding="8dp"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/accountDetails" />
+
+        <EditText
+            android:id="@+id/universityID3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/baseline_school_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/app_theme"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="High School Name"
+            android:inputType="text"
+            android:padding="8dp"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/educationLevel3" />
+
+        <EditText
+            android:id="@+id/educationLevel3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/baseline_phone_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/app_theme"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Phone Number"
+            android:inputType="number"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/unversityEmail3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unversityEmail3" />
+
+        <EditText
+            android:id="@+id/dateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edit_text_background"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:drawableLeft="@drawable/baseline_date_range_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/app_theme"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Date of Birth"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/universityID3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
