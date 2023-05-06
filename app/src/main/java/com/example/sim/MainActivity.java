@@ -3,17 +3,34 @@ package com.example.sim;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.concurrent.TimeUnit;
+
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
+    private JobScheduler mScheduler;
+    private static final String TAG_PUSH_NOTIFICATION_WORKER = "push_notification_worker";
+    private PowerChangeReceiver powerChangeReceiver;
     BottomNavigationView bottomNavigationView;
+    private static final int JOB_ID = 0;
     HomeFragment homeFragment = new HomeFragment();
     CoursesFragment coursesFragment = new CoursesFragment();
     ServicesFragment servicesFragment = new ServicesFragment();
@@ -23,6 +40,68 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("primary_notification_channel", "SIM Notifications", NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription("Important Announcement");
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+
+        // PowerChangeReceiver
+        powerChangeReceiver = new PowerChangeReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Intent.ACTION_POWER_DISCONNECTED);
+        filter.addAction(Intent.ACTION_POWER_CONNECTED);
+        this.registerReceiver(powerChangeReceiver, filter);
+
+
+
+        // Network Change Receiver
+        NetworkChangeReceiver networkChangeReceiver = new NetworkChangeReceiver();
+        IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        this.registerReceiver(networkChangeReceiver, intentFilter);
+
+
+
+
+
+        ImageView notification =  findViewById(R.id.notificationIcon);
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                mScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+//                ComponentName serviceName = new ComponentName(getPackageName(), NotificationJobService.class.getName());
+//                JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceName);
+//                JobInfo myJobInfo = builder.build();
+//                mScheduler.schedule(myJobInfo);
+                
+                
+//                ComponentName cn = new ComponentName("com.example.sim", "com.example.sim.NotificationJobService");
+//                JobInfo info = new JobInfo.Builder(JOB_ID, cn)
+//                        .setMinimumLatency(5000)
+//                        .build();
+//
+//                JobScheduler scheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+//                scheduler.schedule(info);
+
+                Toast.makeText(MainActivity.this, "Notification Triggered", Toast.LENGTH_SHORT).show();
+
+                ComponentName serviceComponent = new ComponentName(getApplication(), MyJobService.class);
+                JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceComponent);
+                JobScheduler jobScheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
+                jobScheduler.schedule(builder.build());
+
+//                OneTimeWorkRequest pushNotificationWorkRequest = new OneTimeWorkRequest.Builder(PushNotificationWorker.class)
+//                        .setInitialDelay(1, TimeUnit.SECONDS) // Wait for at least 1 second before running the job
+//                        .build();
+//
+//                WorkManager.getInstance(MainActivity.this).enqueue(pushNotificationWorkRequest);
+
+
+            }
+        });
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(this);
@@ -36,16 +115,26 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
     }
 
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        if (mScheduler != null) {
+//            mScheduler.cancelAll();
+//            mScheduler = null;
+//            Toast.makeText(getApplicationContext(), "Jobs cancelled", Toast.LENGTH_SHORT).show();
+//        }
+//    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.home) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_fragment, homeFragment).commit();
             return true;
         } else if (item.getItemId() == R.id.service) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_fragment, coursesFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_fragment, servicesFragment).commit();
             return true;
         } else if (item.getItemId() == R.id.courses) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_fragment, servicesFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_fragment, coursesFragment).commit();
             return true;
         } else if (item.getItemId() == R.id.profile) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_fragment, profileFragment).commit();
@@ -53,5 +142,11 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         } else {
             return false;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.unregisterReceiver(powerChangeReceiver);
     }
 }
