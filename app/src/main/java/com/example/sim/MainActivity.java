@@ -11,12 +11,14 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -71,20 +73,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                mScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
-//                ComponentName serviceName = new ComponentName(getPackageName(), NotificationJobService.class.getName());
-//                JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceName);
-//                JobInfo myJobInfo = builder.build();
-//                mScheduler.schedule(myJobInfo);
-                
-                
-//                ComponentName cn = new ComponentName("com.example.sim", "com.example.sim.NotificationJobService");
-//                JobInfo info = new JobInfo.Builder(JOB_ID, cn)
-//                        .setMinimumLatency(5000)
-//                        .build();
-//
-//                JobScheduler scheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
-//                scheduler.schedule(info);
 
                 Toast.makeText(MainActivity.this, "Notification Triggered", Toast.LENGTH_SHORT).show();
 
@@ -93,13 +81,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
                 JobScheduler jobScheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
                 jobScheduler.schedule(builder.build());
 
-//                OneTimeWorkRequest pushNotificationWorkRequest = new OneTimeWorkRequest.Builder(PushNotificationWorker.class)
-//                        .setInitialDelay(1, TimeUnit.SECONDS) // Wait for at least 1 second before running the job
-//                        .build();
-//
-//                WorkManager.getInstance(MainActivity.this).enqueue(pushNotificationWorkRequest);
-
-
             }
         });
 
@@ -107,23 +88,22 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         bottomNavigationView.setOnItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.home);
 
-//        SharedPreferences sharedPreferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
-//        String universityId = sharedPreferences.getString("university_id", "");
-//
-//        TextView universityIdTextView = findViewById(R.id.fullNameMain);
-//        universityIdTextView.setText(universityId);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String universityId = sharedPreferences.getString("universityId", null);
+        if (universityId != null) {
+            TextView universityIdTextView = findViewById(R.id.welcomeName);
+            universityIdTextView.setText(universityId);
+        } else {
+            Toast.makeText(this, "no id in shared preferences", Toast.LENGTH_SHORT).show();
+        }
+
+
+
 
     }
 
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        if (mScheduler != null) {
-//            mScheduler.cancelAll();
-//            mScheduler = null;
-//            Toast.makeText(getApplicationContext(), "Jobs cancelled", Toast.LENGTH_SHORT).show();
-//        }
-//    }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -143,6 +123,8 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             return false;
         }
     }
+
+
 
     @Override
     protected void onDestroy() {

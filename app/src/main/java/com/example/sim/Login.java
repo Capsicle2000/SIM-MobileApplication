@@ -17,8 +17,8 @@ public class Login extends AppCompatActivity {
 
     TextView register;
     CheckBox rememberMe;
-    ;
     SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,19 +28,17 @@ public class Login extends AppCompatActivity {
 
         // Login Button
         Button login = (Button) findViewById(R.id.login);
-
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity (new Intent(Login.this, MainActivity.class));
-
                 EditText universityIdEditText  = (EditText) findViewById(R.id.registrationNumber);
-                sharedPreferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
                 String universityId  = ""+universityIdEditText.getText().toString();
+                sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("universityId" , universityId );
-                Toast.makeText(Login.this, universityId, Toast.LENGTH_SHORT).show();
+                editor.putString("universityId", universityId);
                 editor.apply();
+
             }
         });
 
