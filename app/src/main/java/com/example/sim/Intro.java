@@ -26,7 +26,7 @@ public class Intro extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity (new Intent(Intro.this, Home.class));
+                startActivity (new Intent(Intro.this, MainActivity.class));
             }
         });
 

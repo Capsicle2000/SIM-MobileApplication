@@ -44,7 +44,7 @@
             android:paddingHorizontal="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/educationLevel" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
 
         <EditText
             android:id="@+id/universityID"
@@ -66,10 +66,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/unversityEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/registrationNumber" />
 
         <EditText
-            android:id="@+id/unversityEmail"
+            android:id="@+id/registrationNumber"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -90,7 +90,7 @@
             app:layout_constraintTop_toBottomOf="@+id/accountDetails10" />
 
         <EditText
-            android:id="@+id/educationLevel"
+            android:id="@+id/passwordLogin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"

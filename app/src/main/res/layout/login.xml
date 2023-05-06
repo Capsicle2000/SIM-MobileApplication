@@ -93,7 +93,7 @@
                 android:text="Login Now"
                 android:textColor="@color/app_theme"
                 android:textSize="35sp"
-                app:layout_constraintStart_toStartOf="@+id/unversityEmail"
+                app:layout_constraintStart_toStartOf="@+id/registrationNumber"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -104,11 +104,11 @@
                 android:text="Enter your credentials to proceed"
                 android:textColor="@color/material_dynamic_neutral60"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/unversityEmail"
+                app:layout_constraintStart_toStartOf="@+id/registrationNumber"
                 app:layout_constraintTop_toBottomOf="@+id/accountDetails4" />
 
             <EditText
-                android:id="@+id/unversityEmail"
+                android:id="@+id/registrationNumber"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -130,7 +130,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/accountDetails2" />
 
             <EditText
-                android:id="@+id/educationLevel"
+                android:id="@+id/passwordLogin"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -148,7 +148,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/unversityEmail" />
+                app:layout_constraintTop_toBottomOf="@+id/registrationNumber" />
 
             <TextView
                 android:id="@+id/forgot_password"
@@ -160,7 +160,7 @@
                 android:text="Forgot Password ?"
                 android:textColor="@color/app_theme"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/educationLevel" />
+                app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
 
             <TextView
                 android:id="@+id/terms"
@@ -232,8 +232,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
                 android:text="Remember me"
-                app:layout_constraintStart_toStartOf="@+id/educationLevel"
-                app:layout_constraintTop_toBottomOf="@+id/educationLevel" />
+                app:layout_constraintStart_toStartOf="@+id/passwordLogin"
+                app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

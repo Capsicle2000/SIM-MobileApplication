@@ -13,13 +13,10 @@
         android:theme="@style/Theme.SIM"
         tools:targetApi="31">
         <activity
-            android:name=".Home1"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".Intro"
-            android:exported="false" />
-        <activity
-            android:name=".Home"
             android:exported="false" />
         <activity
             android:name=".Registration"

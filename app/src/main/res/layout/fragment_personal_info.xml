@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/unversityEmail3"
+            android:id="@+id/fullName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -45,6 +45,24 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/accountDetails" />
+
+        <Button
+            android:id="@+id/signIn"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/app_theme"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Login"
+            android:textSize="20sp"
+            app:cornerRadius="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgot_password"
+            app:layout_constraintVertical_bias="0.258" />
 
         <EditText
             android:id="@+id/universityID3"
@@ -83,9 +101,9 @@
             android:hint="Phone Number"
             android:inputType="number"
             android:paddingHorizontal="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/unversityEmail3"
+            app:layout_constraintEnd_toEndOf="@+id/fullName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/unversityEmail3" />
+            app:layout_constraintTop_toBottomOf="@+id/fullName" />
 
         <EditText
             android:id="@+id/dateOfBirth"
