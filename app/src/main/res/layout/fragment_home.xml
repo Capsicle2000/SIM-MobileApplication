@@ -13,13 +13,14 @@
         android:focusableInTouchMode="true">
 
         <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/editTextText"
@@ -73,7 +74,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
                                 android:fontFamily="@font/montserrat_medium"
-                                android:text="Visit Website"
+                                android:text="Quick Link"
                                 android:textColor="@color/app_theme"
                                 android:textSize="16sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -94,7 +95,7 @@
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:layout_marginEnd="10dp"
-                                android:background="@drawable/baseline_date_range_24"
+                                android:background="@drawable/baseline_newspaper_24"
                                 android:backgroundTint="@color/app_theme"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +108,7 @@
                                 android:layout_marginStart="16dp"
                                 android:backgroundTint="@color/app_theme"
                                 android:fontFamily="@font/montserrat_medium"
-                                android:text="Shedule"
+                                android:text="News"
                                 android:textColor="@color/app_theme"
                                 android:textSize="16sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -135,7 +136,7 @@
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:layout_marginEnd="10dp"
-                                android:background="@drawable/baseline_menu_book_24"
+                                android:background="@drawable/baseline_subject_24"
                                 android:backgroundTint="@color/app_theme"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -147,7 +148,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
                                 android:fontFamily="@font/montserrat_medium"
-                                android:text="Courses"
+                                android:text="Results"
                                 android:textColor="@color/app_theme"
                                 android:textSize="16sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -168,7 +169,7 @@
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:layout_marginEnd="10dp"
-                                android:background="@drawable/baseline_date_range_24"
+                                android:background="@drawable/baseline_qr_code_scanner_24"
                                 android:backgroundTint="@color/app_theme"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -181,9 +182,9 @@
                                 android:layout_marginStart="16dp"
                                 android:backgroundTint="@color/app_theme"
                                 android:fontFamily="@font/montserrat_medium"
-                                android:text="Shedule"
+                                android:text="QR\nAttendance"
                                 android:textColor="@color/app_theme"
-                                android:textSize="16sp"
+                                android:textSize="14sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -199,7 +200,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/announcements"
+                            android:id="@+id/Services"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -226,7 +227,7 @@
                         android:clipToPadding="false"
                         android:paddingStart="24dp"
                         android:paddingEnd="24dp"
-                        android:scrollbars="horizontal"/>
+                        android:scrollbars="horizontal" />
 
 
                     <LinearLayout
@@ -267,7 +268,7 @@
                         android:layout_weight="1"
                         android:clipToPadding="false"
                         android:paddingStart="24dp"
-                        android:paddingEnd="24dp"/>
+                        android:paddingEnd="24dp" />
 
 
                 </LinearLayout>

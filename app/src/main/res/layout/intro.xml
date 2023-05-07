@@ -8,31 +8,29 @@
 
     <Button
         android:id="@+id/Start"
-        android:layout_width="0dp"
+        android:layout_width="347dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/app_theme"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="Let's Start"
+        android:text="@string/let_s_start"
         android:textSize="20sp"
         app:cornerRadius="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/accountDetails7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/montserrat_light"
-        android:text="SIM Student Portal is an online gateway where \nstudents can log in to access important \nprogram information."
+        android:text="@string/sim_student_portal_is_an_online_gateway_nwhere_students_can_log_in_to_access_important_nprogram_information"
         android:textColor="@color/material_dynamic_neutral60"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -40,35 +38,24 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="SIM\nStudent Portal"
+        android:text="@string/sim_nstudent_portal"
         android:textColor="@color/black"
         android:textSize="35sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="350dp"
-        android:layout_height="400dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="412dp"
+        android:layout_height="374dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/simlogo" />
-
-    <TextView
-        android:id="@+id/skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/montserrat_semibold"
-        android:text="Skip"
-        android:textColor="@color/app_theme"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/Start"
-        app:layout_constraintStart_toStartOf="@+id/Start"
-        app:layout_constraintTop_toBottomOf="@+id/Start" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

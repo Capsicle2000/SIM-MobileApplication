@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             public void onClick(View v) {
 
                 Toast.makeText(MainActivity.this, "Notification Triggered", Toast.LENGTH_SHORT).show();
-
                 ComponentName serviceComponent = new ComponentName(getApplication(), MyJobService.class);
                 JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, serviceComponent);
                 JobScheduler jobScheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
@@ -90,12 +89,12 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        String universityId = sharedPreferences.getString("universityId", null);
+        String universityId = sharedPreferences.getString("userName", null);
         if (universityId != null) {
             TextView universityIdTextView = findViewById(R.id.welcomeName);
             universityIdTextView.setText(universityId);
         } else {
-            Toast.makeText(this, "no id in shared preferences", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "NO Username in shared preferences", Toast.LENGTH_SHORT).show();
         }
 
 

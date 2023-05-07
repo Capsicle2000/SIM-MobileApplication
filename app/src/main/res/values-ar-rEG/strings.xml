@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">بوابة طلاب SIM</string>
+    <string name="sim_nstudent_portal">بوابة خدمات الطلاب</string>
+    <string name="login_now">سجل الدخول الان</string>
+    <string name="enter_your_credentials_to_proceed">أدخل بيانات الاعتماد الخاصة بك للمتابعة</string>
+    <string name="enter_username">ادخل اسم المستخدم</string>
+    <string name="enter_password">أدخل كلمة المرور</string>
+    <string name="remember_me">تذكرنى</string>
+    <string name="forgot_password">هل نسيت كلمة السر ؟</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="this_information_will_be_securely_saved_as_per_the_terms_of_services_and_privacy_policy">سيتم حفظ هذه المعلومات بشكل آمن وفقًا لشروط الخدمات وسياسة الخصوصية</string>
+    <string name="register">سجل الان</string>
+    <string name="don_t_have_an_account">ليس لديك حساب؟</string>
+    <string name="welcome_back">مرحبًا بعودتك</string>
+    <string name="sim_student_portal_is_an_online_gateway_nwhere_students_can_log_in_to_access_important_nprogram_information">بوابة الطالب هي بوابة عبر الإنترنت حيث يمكن للطلاب \nتسجيل الدخول للوصول إلى معلومات البرنامج الهامة.\n\n</string>
+    <string name="let_s_start">لنبدأ</string>
+</resources>

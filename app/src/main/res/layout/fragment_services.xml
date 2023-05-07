@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="24dp"
                     android:background="@drawable/card_background"
                     android:drawableStart="@drawable/baseline_search_24"
@@ -37,85 +37,425 @@
                     android:hint="Searching For"
                     android:inputType="text"
                     android:padding="10dp" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <LinearLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="16dp"
-                        android:orientation="horizontal">
+                        android:layout_weight="1">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                        <TextView
+                            android:id="@+id/Services"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_weight="0.5"
-                            android:background="@drawable/edit_text_background">
+                            android:layout_marginTop="26dp"
+                            android:layout_marginBottom="24dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="Services"
+                            android:textColor="@color/black"
+                            android:textSize="23sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                            <ImageView
-                                android:id="@+id/s2"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/baseline_menu_book_24"
-                                android:backgroundTint="@color/app_theme"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:rowCount="5"
+                            android:columnCount="2"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp">
 
-                            <TextView
-                                android:id="@+id/s3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:fontFamily="@font/montserrat_medium"
-                                android:text="Courses"
-                                android:textColor="@color/app_theme"
-                                android:textSize="16sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_margin="8dp"
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="0dp"
-                            android:layout_height="70dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="24dp"
-                            android:layout_weight="0.5"
-                            android:background="@drawable/edit_text_background">
+                                android:layout_columnWeight="1"
+                                android:layout_row="1"
+                                android:layout_column="0">
 
-                            <ImageView
-                                android:id="@+id/s4"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/baseline_date_range_24"
-                                android:backgroundTint="@color/app_theme"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:background="@color/edit_text_background"
+                                    android:gravity="center">
 
-                            <TextView
-                                android:id="@+id/service"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:backgroundTint="@color/app_theme"
-                                android:fontFamily="@font/montserrat_medium"
-                                android:text="Shedule"
-                                android:textColor="@color/app_theme"
-                                android:textSize="16sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </LinearLayout>
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/baseline_calculate_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:textColor="@color/app_theme"
+                                        android:text="GPA Calulator"
+                                        android:textSize="16sp" />
+
+
+
+
+
+
+
+                                </LinearLayout>
+
+
+
+
+
+
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_margin="8dp"
+
+                                android:layout_columnWeight="1"
+                                android:layout_row="1"
+                                android:layout_column="1">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/edit_text_background"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/baseline_query_stats_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="Statistics"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:textColor="@color/app_theme"
+                                        android:textSize="16sp" />
+
+
+                                </LinearLayout>
+
+
+
+
+
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_margin="8dp"
+
+                                android:layout_columnWeight="1"
+                                android:layout_row="2"
+                                android:layout_column="0">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:background="@color/edit_text_background"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/baseline_backup_table_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:text="Exam Shedule"
+                                        android:textColor="@color/app_theme"
+                                        android:textSize="16sp" />
+
+
+
+
+
+
+
+                                </LinearLayout>
+
+
+
+
+
+
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_margin="8dp"
+
+                                android:layout_columnWeight="1"
+                                android:layout_row="2"
+                                android:layout_column="1">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:background="@color/edit_text_background"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/baseline_mark_email_read_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:text="Mail Activation"
+                                        android:textColor="@color/app_theme"
+                                        android:textSize="16sp" />
+
+
+
+
+
+
+
+                                </LinearLayout>
+
+
+
+
+
+
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_margin="8dp"
+
+                                android:layout_columnWeight="1"
+                                android:layout_row="3"
+                                android:layout_column="0">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:background="@color/edit_text_background"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/baseline_payments_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:text="Payment"
+                                        android:textColor="@color/app_theme"
+                                        android:textSize="16sp" />
+
+
+
+
+
+
+
+                                </LinearLayout>
+
+
+
+
+
+
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_margin="8dp"
+
+                                android:layout_columnWeight="1"
+                                android:layout_row="3"
+                                android:layout_column="1">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:background="@color/edit_text_background"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/baseline_badge_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:text="Card Request"
+                                        android:textColor="@color/app_theme"
+                                        android:textSize="16sp" />
+
+
+
+
+
+
+
+                                </LinearLayout>
+
+
+
+
+
+
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_margin="8dp"
+
+                                android:layout_columnWeight="1"
+                                android:layout_row="4"
+                                android:layout_column="0">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:background="@color/edit_text_background"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/baseline_description_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:text="Guidance Transcript"
+                                        android:textColor="@color/app_theme"
+                                        android:textSize="16sp" />
+
+
+
+
+
+
+
+                                </LinearLayout>
+
+
+
+
+
+
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_margin="8dp"
+
+                                android:layout_columnWeight="1"
+                                android:layout_row="4"
+                                android:layout_column="1">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:background="@color/edit_text_background"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_gravity="center_horizontal"
+                                        app:srcCompat="@drawable/baseline_question_mark_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:fontFamily="@font/montserrat_medium"
+                                        android:text="Questionnaire"
+                                        android:textColor="@color/app_theme"
+                                        android:textSize="16sp" />
+
+
+
+
+
+
+
+                                </LinearLayout>
+
+
+
+
+
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+
+                        </GridLayout>
+
+                    </RelativeLayout>
+
                 </LinearLayout>
 
             </LinearLayout>

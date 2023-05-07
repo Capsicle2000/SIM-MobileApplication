@@ -24,12 +24,12 @@ public class MyJobService extends JobService {
     public boolean onStartJob(JobParameters params) {
         // Implement logic to show push notification when user clicks on ImageView
         notificationManager = getSystemService(NotificationManager.class);
-        Notification.Builder builder = new Notification.Builder(this, PRIMARY_CHANNEL_ID);
-        builder.setSmallIcon(R.drawable.simlogo);
-        builder.setContentTitle("Mobile Application");
-        builder.setContentText("My dear students your mid term marks are available");
-        builder.setAutoCancel(true);
-        builder.setTimeoutAfter(5000);
+        Notification.Builder builder = new Notification.Builder(this, PRIMARY_CHANNEL_ID)
+                .setSmallIcon(R.drawable.simlogo)
+                .setContentTitle("Dr. khaled_elwazan ")
+                .setContentText("My dear students your mid term marks are available")
+                .setAutoCancel(true)
+                .setTimeoutAfter(10000);
         notificationManager.notify(1, builder.build());
         return false;
     }

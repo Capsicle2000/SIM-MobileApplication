@@ -66,10 +66,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registrationNumber" />
+            app:layout_constraintTop_toBottomOf="@+id/userName" />
 
         <EditText
-            android:id="@+id/registrationNumber"
+            android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"

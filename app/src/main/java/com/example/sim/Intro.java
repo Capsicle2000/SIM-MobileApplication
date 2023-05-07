@@ -22,13 +22,7 @@ public class Intro extends AppCompatActivity {
                 startActivity (new Intent(Intro.this, Login.class));
             }
         });
-        TextView skip = (TextView) findViewById(R.id.skip);
-        skip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity (new Intent(Intro.this, MainActivity.class));
-            }
-        });
+
 
     }
 }

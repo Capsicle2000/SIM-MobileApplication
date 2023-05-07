@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -32,15 +31,17 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity (new Intent(Login.this, MainActivity.class));
-                EditText universityIdEditText  = (EditText) findViewById(R.id.registrationNumber);
-                String universityId  = ""+universityIdEditText.getText().toString();
+                EditText userNameIdEditText  = (EditText) findViewById(R.id.userName);
+                String userName  = ""+userNameIdEditText.getText().toString();
                 sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("universityId", universityId);
+                editor.putString("userName", userName);
                 editor.apply();
 
             }
         });
+
+
 
         // Registration Button
         register = (TextView) findViewById(R.id.register);
@@ -52,13 +53,14 @@ public class Login extends AppCompatActivity {
             }
         });
 
+
         // Remember Me CheckBox
         rememberMe = (CheckBox) findViewById(R.id.checkBox);
         rememberMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(rememberMe.isChecked()){
-                    Toast.makeText(Login.this, "Login details saved successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Login details saved", Toast.LENGTH_SHORT).show();
                     rememberMe.setTextColor(getResources().getColor(R.color.app_theme));
                 }
                 else{

@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">SIM</string>
+    <string name="app_name">SIM Student Portal</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sim_nstudent_portal">SIM\nStudent Portal</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="login">Login</string>
+    <string name="this_information_will_be_securely_saved_as_per_the_terms_of_services_and_privacy_policy">This information will be securely saved as per the Terms of Services and Privacy Policy</string>
+    <string name="don_t_have_an_account">Don\'t Have an Account ?</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_now">Login Now</string>
+    <string name="enter_your_credentials_to_proceed">Enter your credentials to proceed</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="register">Register</string>
+    <string name="sim_student_portal_is_an_online_gateway_nwhere_students_can_log_in_to_access_important_nprogram_information">SIM Student Portal is an online gateway\nwhere students can log in to access important\nprogram information.</string>
+    <string name="let_s_start">Let\'s Start</string>
 </resources>

@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
-        android:text="Welcome Back"
+        android:text="@string/welcome_back"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="SIM\nStudent Portal"
+        android:text="@string/sim_nstudent_portal"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -90,10 +90,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/montserrat_semibold"
-                android:text="Login Now"
+                android:text="@string/login_now"
                 android:textColor="@color/app_theme"
                 android:textSize="35sp"
-                app:layout_constraintStart_toStartOf="@+id/registrationNumber"
+                app:layout_constraintStart_toStartOf="@+id/userName"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -101,14 +101,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_light"
-                android:text="Enter your credentials to proceed"
+                android:text="@string/enter_your_credentials_to_proceed"
                 android:textColor="@color/material_dynamic_neutral60"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/registrationNumber"
+                app:layout_constraintStart_toStartOf="@+id/userName"
                 app:layout_constraintTop_toBottomOf="@+id/accountDetails4" />
 
             <EditText
-                android:id="@+id/registrationNumber"
+                android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -120,8 +120,8 @@
                 android:drawableTint="@color/app_theme"
                 android:ems="10"
                 android:fontFamily="@font/montserrat_light"
-                android:hint="Registration Number"
-                android:inputType="number"
+                android:hint="@string/enter_username"
+                android:inputType="text"
                 android:padding="8dp"
                 android:paddingHorizontal="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -129,8 +129,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/accountDetails2" />
 
+
             <EditText
-                android:id="@+id/passwordLogin"
+                android:id="@+id/pass"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -142,25 +143,26 @@
                 android:drawableTint="@color/app_theme"
                 android:ems="10"
                 android:fontFamily="@font/montserrat_light"
-                android:hint="Password"
+                android:hint="@string/enter_password"
                 android:inputType="textPassword"
+                android:padding="8dp"
                 android:paddingHorizontal="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/registrationNumber" />
+                app:layout_constraintTop_toBottomOf="@+id/userName" />
 
             <TextView
                 android:id="@+id/forgot_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/montserrat"
-                android:text="Forgot Password ?"
+                android:text="@string/forgot_password"
                 android:textColor="@color/app_theme"
+                app:layout_constraintBottom_toBottomOf="@+id/checkBox"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
+                app:layout_constraintTop_toBottomOf="@+id/pass" />
 
             <TextView
                 android:id="@+id/terms"
@@ -171,7 +173,7 @@
                 android:layout_marginEnd="13dp"
                 android:fontFamily="@font/montserrat_extralight"
                 android:gravity="center"
-                android:text="This information will be securely saved as per the Terms of Services and Privacy Policy"
+                android:text="@string/this_information_will_be_securely_saved_as_per_the_terms_of_services_and_privacy_policy"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -185,7 +187,7 @@
                 android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/app_theme"
                 android:fontFamily="@font/montserrat_semibold"
-                android:text="Login"
+                android:text="@string/login"
                 android:textSize="20sp"
                 app:cornerRadius="13dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -212,7 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
                     android:fontFamily="@font/montserrat"
-                    android:text="Don't Have an Account ?" />
+                    android:text="@string/don_t_have_an_account" />
 
                 <TextView
                     android:id="@+id/register"
@@ -222,7 +224,7 @@
                     android:clickable="true"
                     android:fontFamily="@font/montserrat"
                     android:onClick="onClick"
-                    android:text=" Register"
+                    android:text="@string/register"
                     android:textColor="@color/app_theme" />
             </LinearLayout>
 
@@ -231,9 +233,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:text="Remember me"
-                app:layout_constraintStart_toStartOf="@+id/passwordLogin"
-                app:layout_constraintTop_toBottomOf="@+id/passwordLogin" />
+                android:text="@string/remember_me"
+                app:layout_constraintStart_toStartOf="@+id/pass"
+                app:layout_constraintTop_toBottomOf="@+id/pass" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
